@@ -8,17 +8,19 @@ import { Icon } from "astro-icon/components";
     <div>
       <Icon name="mingcute:right-line" class="text-5xl text-pink-800" />
     </div>
-    <div>
+    <div class="mr-14">
       <h1 class="text-3xl sm:text-white sm:text-5xl whitespace-nowrap">
         &#123;welcome&#125;
       </h1>
     </div>
   </div>
-  <div class="mt-7 ml-7 whitespace-break-spaces">
+  <div class="mt-7 m-auto whitespace-break-spaces max-w-[90vw]">
     <span> - - - - - - - - - - - - - - - - - - - - - -</span>
   </div>
-  <div class="items-end w-full mt-10">
-    <p class="text-left ml-5">
+  <div
+    class="items-end w-full mt-10 block whitespace-normal max-w-[90vw] leading-7"
+  >
+    <p class="text-left ml-5 block">
       My name is <span class="text-lime-600 font-bold">Jon Thomann</span>! I am
       a software developer and machine learning enthusiast!
     </p><p class="ml-5">
@@ -28,8 +30,19 @@ import { Icon } from "astro-icon/components";
       or view my <a href="/projects" class="text-pink-800">projects</a>.
     </p>
   </div>
-  <div class="mt-20 flex flex-row justify-end items-center w-fit">
-    <ProjectsCardReact client:load />
+  <div class="flex flex-row items-center max-w-screen justify-between mt-20">
+    <ProjectsCardReact client:load transition:persist transition:slide>
+      <Icon
+        slot="pinkIcon"
+        name="mingcute:right-line"
+        class="text-pink-800 text-xl"
+      />
+      <Icon
+        slot="greenIcon"
+        name="mingcute:git-merge-line"
+        class="text-lime-800 text-xl"
+      />
+    </ProjectsCardReact>
   </div>
 </div>
 
